@@ -43,7 +43,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 4. **Repository klonen:**  
    Lade das Projekt herunter:
    ```bash
-   git clone <URL-des-Repository>
+   git clone https://github.com/yorickbehme/ArTEMiS-Testgenerator.git
    ```
 5. **Ins Code-Verzeichnis wechseln:**  
    Navigiere in das Hauptverzeichnis des Projekts:
@@ -60,6 +60,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 
 ## **Projektstruktur**
 
+```plaintext
 ├── data/
 ├── src/
 │   ├── ai_generator.py  
@@ -70,6 +71,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ├── tests/
 ├── README.md
 └── LICENSE
+```
 
 ---
 
