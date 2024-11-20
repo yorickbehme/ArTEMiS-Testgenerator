@@ -19,6 +19,156 @@ Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste v
 
 ---
 
+## **Kombinationsprompt**
+
+You are a Python test generation tool. **Generate a detailed and comprehensive Python test suite for the provided code.** Make sure the test suite aligns with the given examples and satisfies all specified requirements:
+
+### Requirements ###
+* Include test cases to verify the existence of all classes and functions, expected behavior for typical inputs, edge cases for unusual inputs, and handling of type errors.
+* Provide clear feedback in German for each failed test, specifying what functionality is required to pass.
+* Output only the complete Python test suite without any additional explanations or comments.
+
+### Example ###
+```
+import unittest
+
+class TestAddFunction(unittest.TestCase):
+
+    def test_function_exists(self):
+        """
+        Prüft, ob die Funktion 'add' existiert.
+        """
+        self.assertTrue(callable(add), "'add' soll existieren. Vergewissere dich, dass die Funktion definiert ist.")
+
+    def test_add_two_positive_integers(self):
+        """
+        Prüft, ob 'add' zwei positive Ganzzahlen korrekt addiert.
+        """
+        self.assertEqual(add(1, 2), 3, "'add' soll zwei positive Ganzzahlen addieren können. Überprüfe, ob der Code für einfache Summen funktioniert.")
+
+    def test_add_two_negative_integers(self):
+        """
+        Prüft, ob 'add' zwei negative Ganzzahlen korrekt addiert.
+        """
+        self.assertEqual(add(-1, -2), -3, "'add' soll zwei negative Ganzzahlen addieren können. Vergewissere dich, dass Vorzeichen richtig behandelt werden.")
+
+    def test_add_positive_and_negative_integer(self):
+        """
+        Prüft, ob 'add' eine positive und eine negative Zahl korrekt addiert.
+        """
+        self.assertEqual(add(-2, 3), 1, "'add' soll eine negative und eine positive Zahl addieren können. Achte darauf, dass Vorzeichen korrekt verarbeitet werden.")
+
+    def test_add_two_floats(self):
+        """
+        Prüft, ob 'add' zwei Kommazahlen korrekt addiert.
+        """
+        self.assertEqual(add(1.5, 2.5), 4.0, "'add' soll mit Kommazahlen umgehen können. Überprüfe, ob Fließkommazahlen korrekt summiert werden.")
+
+    def test_add_float_and_integer(self):
+        """
+        Prüft, ob 'add' eine Kommazahl und eine Ganzzahl korrekt addiert.
+        """
+        self.assertEqual(add(1.5, 1), 2.5, "'add' soll mit einer Kommazahl und einer Ganzzahl umgehen können. Überprüfe die Typenkompatibilität.")
+
+    def test_add_zero_and_integer(self):
+        """
+        Prüft, ob 'add' die Zahl '0' korrekt addiert.
+        """
+        self.assertEqual(add(0, 1), 1, "'add' soll mit '0' addieren können. Stelle sicher, dass der Code '0' korrekt behandelt.")
+
+    def test_add_large_number(self):
+        """
+        Prüft, ob 'add' mit sehr großen Zahlen umgehen kann.
+        """
+        self.assertEqual(add(float('inf'), 1), float('inf'), "'add' soll auch mit großen Zahlen umgehen können. Achte darauf, dass keine Überläufe auftreten.")
+
+    def test_invalid_type_string(self):
+        """
+        Prüft, ob 'add' bei String-Eingaben einen Typfehler auslöst.
+        """
+        with self.assertRaises(TypeError, msg="'add' soll für String-Eingaben einen Typfehler werfen. Überprüfe, ob die Eingaben korrekt validiert werden."): add("a", 1)
+
+    def test_invalid_type_none(self):
+        """
+        Prüft, ob 'add' bei 'None'-Eingaben einen Typfehler auslöst.
+        """
+        with self.assertRaises(TypeError, msg="'add' soll für 'None'-Eingaben einen Typfehler werfen. Überprüfe, ob die Eingaben korrekt validiert werden."): add(1, None)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+### Code ###
+{code}
+
+---
+
+## **Testfälle**
+
+### **Test 1:**
+
+```
+def sub(a, b):
+    return a - b
+```
+
+### **Test 2:**
+
+```
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+```
+
+### **Test 3:**
+
+```
+import math
+
+class MathOperations:
+
+    def square_root(a):
+        return math.sqrt(a)
+```
+
+### **Test 4:**
+
+```
+def calculate_mean(number_list: list):
+    length = len(number_list)
+    if length == 0:
+        return None
+    for l in number_list:
+        if type(l) != int:
+            if type(l) != float:
+                return None
+    summe = sum(number_list)
+    average = summe / length
+    return average
+```
+
+### **Test 5:**
+
+```
+def is_leap_year(year: int):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
+```
+
+---
+
 ## **Llama3**
 
 ### **Test 1:**
