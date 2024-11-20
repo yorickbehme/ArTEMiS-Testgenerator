@@ -2,10 +2,22 @@
 
 In der folgenden Analyse werden die Modelle **Llama3** (lokal installiert mit Ollama) und **GPT-4o** hinsichtlich ihrer Leistungsfähigkeit bei der Testgenerierung untersucht. Jedes Modell wird mit fünf repräsentativen **Testfällen** getestet, wobei jeder Testfall in drei Durchläufen evaluiert wird. Als Eingabe dient der zuvor in der **Promptuntersuchung** entwickelte **Kombinationsprompt**, der mit den jeweiligen Testfällen ergänzt und den Modellen übergeben wird.
 
-Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in einer Vergleichstabelle zusammengefasst und gegenübergestellt.
+Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in einer **Auswertungstabelle** zusammengefasst und gegenübergestellt. Diese befindet sich zur Übersicht am Anfang des Dokuments. 
 
 ---
 
+## **Ausertungstabellen**
+
+| Test | Llama3         | GPT-4o          |
+|------|----------------|-----------------|
+| 1.   | 21/30 = 70%    | 30/30 = 100%    |
+| 2.   | 63/90 = 70%    | 66/90 = 73,33%  |
+| 3.   | 12/27 = 44,44% | 27/27 = 100%    |
+| 4.   | 23/30 = 76,67% | 23/30 = 76,67%  |
+| 5.   | 16/18 = 88,89% | 18/18 = 100%    |
+| **Total:** | **ø 69,80%** | **ø 90%** |
+
+---
 
 ## **Llama3**
 
@@ -281,12 +293,12 @@ Bemerkungen:
 
 **Punkte: 1/10**
 
-**Total: 21/30**
-'''
+***Total: 21/30***
 
+### **Test 2:**
 
-Test 2:
-1. ###
+---
+
 Here is the Python test suite for the provided code:
 
 ```
@@ -351,8 +363,10 @@ class TestFunctions(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -386,15 +400,13 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ❌
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
-
 Bemerkungen:
 - 'add' Testfälle wurden fälschlicherweise mit implementiert. 
 
-Punkte: 13/30
-'''
+**Punkte: 13/30**
 
-2. ###
+---
+
 Here is the Python test suite for the provided code:
 
 ```
@@ -581,8 +593,11 @@ class TestOperations(unittest.TestCase):
         Prüft, ob 'div' bei 'None'-Eingangen einen Typfehler auslöst.
         """
         with self.assertRaises(TypeError, msg="'div' soll für 'None'-Eingaben einen Typfehler werfen. Überprüfe, ob die Eingaben korrekt validiert werden."): div(1, None)
-###
-'''
+```
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -616,15 +631,14 @@ class TestOperations(unittest.TestCase):
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
-
 Bemerkungen:
 - Feedback für 'div' durch 0 fehlt
+- Schließendes Markup (\´´\´´\´´) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
 
-Punkte: 29/30
-'''
+**Punkte: 29/30**
 
-3. ###
+---
+
 Here is the Python test suite for the provided code:
 
 ```
@@ -772,8 +786,10 @@ if __name__ == '__main__':
     test_suite = unittest.TestSuite([test_subtract, test_multiply, test_divide])
     runner = unittest.TextTestRunner()
     runner.run(test_suite)
-###
-'''
+```
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ❌
@@ -807,18 +823,17 @@ if __name__ == '__main__':
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste)✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ❌
 
-Fehlerhafte Testfälle:
-
 Bemerkungen:
+- Schließendes Markup (\´´\´´\´´) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
 
-Punkte: 21/30
+**Punkte: 21/30**
 
-Total: 63/90
-'''
+***Total: 63/90***
 
+### **Test 3:**
 
-Test 3: 
-1. ###
+---
+
 ```
 import unittest
 from your_module import add, MathOperations  # Import the code under test
@@ -888,8 +903,9 @@ class TestAddFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+---
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ❌
 2. "squere_root" Funkton existiert ❌
 4. Wirft einen ValueError für eine negativen Ganzzahl ❌
@@ -900,15 +916,13 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ❌
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ❌
 
-Fehlerhafte Testfälle:
-
 Bemerkungen:
 - Test fäschlicherweise für 'add' implementiert
 
-Punkte: 0/9
-'''
+**Punkte: 0/9**
 
-2. ###
+---
+
 Here is the Python test suite for the provided code:
 ```
 import unittest
@@ -949,8 +963,10 @@ class TestMathOperations(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ❌
 2. "squere_root" Funkton existiert ✅
 3. Berechnet die Qadratwurzel einer positiven Ganzzahl ✅
@@ -961,14 +977,10 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 6/9**
 
-Bemerkungen:
+---
 
-Punkte: 6/9
-'''
-
-3. ###
 Here is the comprehensive Python test suite for the provided code:
 
 ```python
@@ -1022,8 +1034,8 @@ class TestMathOperations(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ❌
 2. "squere_root" Funkton existiert ✅
 3. Berechnet die Qadratwurzel einer positiven Ganzzahl ✅
@@ -1034,19 +1046,17 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
-- def test_square_root_negative_integer(self):
-
 Bemerkungen:
+- def test_square_root_negative_integer(self): ist fehlerhaft implementiert
 
-Punkte: 6/9
+**Punkte: 6/9**
 
-Total: 12/27
-'''
+***Total: 12/27***
 
+### **Test 4:**
 
-Test 4: 
-1. ###
+---
+
 ```
 import unittest
 
@@ -1115,8 +1125,10 @@ class TestCalculateMeanFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ✅
@@ -1128,14 +1140,10 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 8/10**
 
-Bemerkungen:
+---
 
-Punkte: 8/10
-'''
-
-2. ###
 ```
 import unittest
 
@@ -1210,8 +1218,8 @@ class TestCalculateMean(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ✅
@@ -1223,14 +1231,10 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 9/10**
 
-Bemerkungen:
+---
 
-Punkte: 9/10
-'''
-
-3. ###
 ```
 import unittest
 
@@ -1281,8 +1285,10 @@ class TestCalculateMeanFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ❌
@@ -1294,18 +1300,14 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 6/10**
 
-Bemerkungen:
+***Total: 23/30***
 
-Punkte: 6/10
+### **Test 5:**
 
-Total: 23/30
-'''
+---
 
-
-Test 5:
-1. ###
 ```
 import unittest
 
@@ -1347,8 +1349,10 @@ class TestIsLeapYearFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ✅
@@ -1356,16 +1360,13 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
-
-
 Bemerkungen:
 - 1900 Test ist zwar richtig als Falsch gekennzeichnet, aber der Kommentar und die Zuordnung ist falsch. 
 
-Punkte: 6/6
-'''
+**Punkte: 6/6**
 
-2. ###
+---
+
 ```
 import unittest
 
@@ -1428,8 +1429,10 @@ class TestLeapYearFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ✅
@@ -1437,14 +1440,10 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle: 
+**Punkte: 5/6**
 
-Bemerkungen:
+---
 
-Punkte: 5/6
-'''
-
-3. ###
 ```
 import unittest
 
@@ -1489,8 +1488,10 @@ class TestIsLeapYearFunction(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-###
-'''
+
+---
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ❌
@@ -1498,22 +1499,19 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 5/6**
 
-Bemerkungen:
+***Total: 16/18***
 
-Punkte: 5/6
+---
 
-Total: 16/18
-'''
+## **GPT-4o**
 
+### **Test 1:**
 
+---
 
-
-GPT-4o
-
-Test 1:
-1. ###
+´´´
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1588,8 +1586,9 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -1601,15 +1600,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 10/10**
 
-Bemerkungen:
+---
 
-Punkte: 10/10
-'''
-'''
-
-2. ###
+´´´
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1684,8 +1679,11 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -1697,14 +1695,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 10/10**
 
-Bemerkungen:
+---
 
-Punkte: 10/10
-'''
-
-3. ###
+´´´
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1773,8 +1768,11 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -1786,18 +1784,15 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 10/10**
 
-Bemerkungen:
+***Total: 30/30***
 
-Punkte: 10/10
+### **Test 2:**
 
-Total: 30/30
-'''
+---
 
-
-Test 2:
-1. ###
+´´´
 import unittest
 
 class TestMathFunctions(unittest.TestCase):
@@ -1895,8 +1890,11 @@ class TestMathFunctions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -1930,14 +1928,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 24/30**
 
-Bemerkungen:
+---
 
-Punkte: 24/30
-'''
-
-2. ###
+´´´
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -2063,8 +2058,11 @@ class TestDivFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ❌
@@ -2098,14 +2096,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 18/30**
 
-Bemerkungen:
+---
 
-Punkte: 18/30
-'''
-
-3. ###
+´´´
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -2207,8 +2202,11 @@ class TestDivFunction(unittest.TestCase):
         self.assertEqual(div(-8, -4), 2, "'div' soll zwei negative Ganzzahlen dividieren können. Achte auf korrektes Vorzeichenhandling.")
 
     def test_divide_positive_and_negative
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "sub" Funkton existiert ✅
 2. Subtrahiert zwei positive Ganzzahlen ✅
 3. Subtrahiert zwei negative Ganzzahlen ✅
@@ -2242,18 +2240,15 @@ class TestDivFunction(unittest.TestCase):
 9. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 24/30**
 
-Bemerkungen:
+***Total: 66/90***
 
-Punkte: 24/30
+### **Test 3:**
 
-Total: 66/90
-'''
+---
 
-
-Test 3:
-1. ###
+´´´
 import unittest
 import math
 
@@ -2323,8 +2318,11 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ✅
 2. "squere_root" Funkton existiert ✅
 3. Berechnet die Qadratwurzel einer positiven Ganzzahl ✅
@@ -2335,14 +2333,11 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 9/9**
 
-Bemerkungen:
+---
 
-Punkte: 9/9
-'''
-
-2. ###
+´´´
 import unittest
 from math_operations import MathOperations
 
@@ -2424,8 +2419,11 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ✅
 2. "squere_root" Funkton existiert ✅
 3. Berechnet die Qadratwurzel einer positiven Ganzzahl ✅
@@ -2436,14 +2434,11 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 9/9**
 
-Bemerkungen:
+---
 
-Punkte: 9/9
-'''
-
-3. ###
+´´´
 import unittest
 import math
 
@@ -2513,8 +2508,11 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "MathOperations" Klasse existiert ✅
 2. "squere_root" Funkton existiert ✅
 3. Berechnet die Qadratwurzel einer positiven Ganzzahl ✅
@@ -2525,17 +2523,15 @@ if __name__ == "__main__":
 8. Wirft einen Typfehler für nicht-numerische Eingaben (z.B. Zeichenkette oder Liste) ✅
 9. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 9/9**
 
-Bemerkungen:
+***Total: 27/27***
 
-Punkte: 9/9
+### **Test 4:**
 
-Total: 27/27
-'''
+---
 
-Test 4:
-1. ###
+´´´
 import unittest
 
 class TestCalculateMean(unittest.TestCase):
@@ -2609,10 +2605,11 @@ class TestCalculateMean(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-```
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ❌
@@ -2624,14 +2621,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ✅
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 7/10**
 
-Bemerkungen:
+---
 
-Punkte: 7/10
-'''
-
-2. ###
+´´´
 import unittest
 
 class TestCalculateMean(unittest.TestCase):
@@ -2698,8 +2692,11 @@ class TestCalculateMean(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ✅
@@ -2711,14 +2708,11 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ❌
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 8/10**
 
-Bemerkungen:
+---
 
-Punkte: 8/10
-'''
-
-3. ###
+´´´
 import unittest
 
 class TestCalculateMeanFunction(unittest.TestCase):
@@ -2802,8 +2796,11 @@ class TestCalculateMeanFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "calculate_mean" Funkton existiert ✅
 2. Berechnet den Durchschnitt einer Liste von positiven Ganzzahlen ✅
 3. Berechnet den Durchschnitt einer Liste von negativen Ganzzahlen ✅
@@ -2815,18 +2812,15 @@ if __name__ == "__main__":
 9. Wirft einen Typfehler für Eingaben die nicht-numerische Listen sind (z.B. Strings oder Integer) ❌
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle:
+**Punkte: 8/10**
 
-Bemerkungen:
+***Total: 23/30***
 
-Punkte: 8/10
+### **Test 5:**
 
-Total: 23/30
-'''
+---
 
-
-Test 5:
-1. ###
+´´´
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -2902,8 +2896,11 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ✅
@@ -2911,14 +2908,11 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle: 
+**Punkte: 6/6**
 
-Bemerkungen:
+---
 
-Punkte: 6/6
-'''
-
-2. ###
+´´´
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -2994,8 +2988,11 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+---
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ✅
@@ -3003,14 +3000,11 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle: 
+**Punkte: 6/6**
 
-Bemerkungen:
+---
 
-Punkte: 6/6
-'''
-
-3. ###
+´´´
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -3092,8 +3086,9 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-###
-'''
+´´´
+
+### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
 2. Mehrere Schaltjahre werden richtig als Schaltjahr erkannt ✅
 3. Mehrere nicht Schaltjahre richtig als nicht Schaltjahre erkannt ✅
@@ -3101,11 +3096,6 @@ if __name__ == "__main__":
 5. Wirft einen Typfehler für nicht integer Eingaben (z.B. Gleitkommazahlen oder Strings) ✅
 6. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ✅
 
-Fehlerhafte Testfälle: 
+**Punkte: 6/6**
 
-Bemerkungen:
-
-Punkte: 6/6
-
-Total: 18/18
-'''
+***Total: 18/18***
