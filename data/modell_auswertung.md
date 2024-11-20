@@ -6,7 +6,7 @@ Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste v
 
 ---
 
-## **Ausertungstabellen**
+## **Auswertungstabellen**
 
 | Test | Llama3         | GPT-4o          |
 |------|----------------|-----------------|
@@ -633,7 +633,7 @@ class TestOperations(unittest.TestCase):
 
 Bemerkungen:
 - Feedback für 'div' durch 0 fehlt
-- Schließendes Markup (\´´\´´\´´) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
+- Schließendes Markup (```) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
 
 **Punkte: 29/30**
 
@@ -824,7 +824,7 @@ if __name__ == '__main__':
 10. Gibt Sinnvolles Feedback für nichterfüllte Testfälle ❌
 
 Bemerkungen:
-- Schließendes Markup (\´´\´´\´´) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
+- Schließendes Markup (```) wurde zur Darstellung ergänzt, ist aber nicht Teil der Modellausgabe
 
 **Punkte: 21/30**
 
@@ -1511,7 +1511,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1586,7 +1586,7 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ### **Auswertung**
 1. "sub" Funkton existiert ✅
@@ -1604,7 +1604,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1679,7 +1679,7 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -1699,7 +1699,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -1768,7 +1768,7 @@ class TestSubFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -1792,7 +1792,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestMathFunctions(unittest.TestCase):
@@ -1890,7 +1890,7 @@ class TestMathFunctions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -1932,7 +1932,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -2058,7 +2058,7 @@ class TestDivFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2100,7 +2100,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestSubFunction(unittest.TestCase):
@@ -2202,7 +2202,7 @@ class TestDivFunction(unittest.TestCase):
         self.assertEqual(div(-8, -4), 2, "'div' soll zwei negative Ganzzahlen dividieren können. Achte auf korrektes Vorzeichenhandling.")
 
     def test_divide_positive_and_negative
-´´´
+```
 
 ---
 
@@ -2248,7 +2248,7 @@ class TestDivFunction(unittest.TestCase):
 
 ---
 
-´´´
+```
 import unittest
 import math
 
@@ -2318,7 +2318,7 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2337,7 +2337,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 from math_operations import MathOperations
 
@@ -2419,7 +2419,7 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2438,7 +2438,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 import math
 
@@ -2508,7 +2508,7 @@ class TestMathOperations(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2531,7 +2531,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestCalculateMean(unittest.TestCase):
@@ -2605,7 +2605,7 @@ class TestCalculateMean(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2625,7 +2625,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestCalculateMean(unittest.TestCase):
@@ -2692,7 +2692,7 @@ class TestCalculateMean(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2712,7 +2712,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestCalculateMeanFunction(unittest.TestCase):
@@ -2796,7 +2796,7 @@ class TestCalculateMeanFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2820,7 +2820,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -2896,7 +2896,7 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -2912,7 +2912,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -2988,7 +2988,7 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ---
 
@@ -3004,7 +3004,7 @@ if __name__ == "__main__":
 
 ---
 
-´´´
+```
 import unittest
 
 class TestIsLeapYearFunction(unittest.TestCase):
@@ -3086,7 +3086,7 @@ class TestIsLeapYearFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-´´´
+```
 
 ### **Auswertung**
 1. "is_leap_year" Funkton existiert ✅
