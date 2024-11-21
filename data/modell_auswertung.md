@@ -2,20 +2,57 @@
 
 In der folgenden Analyse werden die Modelle **Llama3** (lokal installiert mit Ollama) und **GPT-4o** hinsichtlich ihrer Leistungsfähigkeit bei der Testgenerierung untersucht. Jedes Modell wird mit fünf repräsentativen **Testfällen** getestet, wobei jeder Testfall in drei Durchläufen evaluiert wird. Als Eingabe dient der zuvor in der **Promptuntersuchung** entwickelte **Kombinationsprompt**, der mit den jeweiligen Testfällen ergänzt und den Modellen übergeben wird.
 
-Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in einer **Auswertungstabelle** zusammengefasst und gegenübergestellt. Diese befindet sich der Übersichtlichkeit halber am Anfang des Dokuments.
+Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in **Auswertungstabellen** zusammengefasst und gegenübergestellt. Diese befinden sich der Übersichtlichkeit halber am Anfang des Dokuments.
 
 ---
 
 ## **Auswertungstabellen**
 
-| Test | Llama3         | GPT-4o          |
-|------|----------------|-----------------|
-| 1.   | 21/30 = 70%    | 30/30 = 100%    |
-| 2.   | 63/90 = 70%    | 66/90 = 73,33%  |
-| 3.   | 12/27 = 44,44% | 27/27 = 100%    |
-| 4.   | 23/30 = 76,67% | 23/30 = 76,67%  |
-| 5.   | 16/18 = 88,89% | 18/18 = 100%    |
-| **Total:** | **ø 69,80%** | **ø 90%** |
+### Test 1: Subtraktion
+| **Iteration** | **Llama3**        | **GPT-4o**       |
+|---------------|-------------------|------------------|
+| 1             | 10/10     | 10/10    |
+| 2             | 10/10     | 10/10    |
+| 3             | 1/10      | 10/10    |
+| **Total:**    | **21/30 = 70%**  | **30/30 = 100%** |
+
+### Test 2: Multiplikation
+| **Iteration** | **Llama3**        | **GPT-4o**       |
+|---------------|-------------------|------------------|
+| 1             | 13/30    | 24/30    |
+| 2             | 29/30    | 18/30    |
+| 3             | 21/30    | 24/30    |
+| **Total:**    | **63/90 = 70%**  | **66/90 = 73,33%** |
+
+### Test 3: Division
+| **Iteration** | **Llama3**        | **GPT-4o**       |
+|---------------|-------------------|------------------|
+| 1             | 0/9    | 9/9      |
+| 2             | 6/9    | 9/9      |
+| 3             | 6/9    | 9/9      |
+| **Total:**    | **12/27 = 44,44%** | **27/27 = 100%** |
+
+### Test 4: Mittelwertberechnung
+| **Iteration** | **Llama3**        | **GPT-4o**       |
+|---------------|-------------------|------------------|
+| 1             | 8/10      | 7/10      |
+| 2             | 9/10      | 8/10      |
+| 3             | 6/10      | 8/10      |
+| **Total:**    | **23/30 = 76,67%** | **23/30 = 76,67%** |
+
+### Test 5: Schaltjahrprüfung
+| **Iteration** | **Llama3**        | **GPT-4o**       |
+|---------------|-------------------|------------------|
+| 1             | 6/6    | 6/6       |
+| 2             | 5/6    | 6/6       |
+| 3             | 5/6    | 6/6       |
+| **Total:**    | **16/18 = 88,89%** | **18/18 = 100%** |
+
+### Gesamtbewertung
+| **Modell**    | **Gesamtpunkte (Summe)** | **Durchschnitt (Prozent)** | **Durchschnitt der Einzelprozente** |
+|---------------|--------------------------|----------------------------|-------------------------------------|
+| **Llama3**    | 135/195         | 69,23%                     | 70,38%                             |
+| **GPT-4o**    | 164/195         | 84,10%                     | 90,00%                             |
 
 ---
 

@@ -8,14 +8,15 @@ Die Ausgaben wurden mit einer vordefinierten Liste von **Standard-Testfällen** 
 
 ## **Auswertungstabellen**->Überarbeiten
 
-| Test | Llama3         | GPT-4o          |
-|------|----------------|-----------------|
-| 1.   | 21/30 = 70%    | 30/30 = 100%    |
-| 2.   | 63/90 = 70%    | 66/90 = 73,33%  |
-| 3.   | 12/27 = 44,44% | 27/27 = 100%    |
-| 4.   | 23/30 = 76,67% | 23/30 = 76,67%  |
-| 5.   | 16/18 = 88,89% | 18/18 = 100%    |
-| **Total:** | **ø 69,80%** | **ø 90%** |
+| **Technik**           | **Iteration 1** | **Iteration 2** | **Iteration 3** | **Total** | **Prozent** |
+|-----------------------|------------|------------|------------|-----------|-------------|
+| **Instruction-Prompting** | 5/10       | 6/10       | 7/10       | 18/30     | 60,00%      |
+| **Zero-Shot-Prompting**   | 2/10       | 2/10       | 5/10       | 9/30      | 30,00%      |
+| **One-Shot-Prompting**    | 7/10       | 7/10       | 7/10       | 21/30     | 70,00%      |
+| **Few-Shot-Prompting**    | 7/10       | 7/10       | 6/10       | 20/30     | 66,67%      |
+| **Chain-of-Thought-Prompting** | 4/10       | 5/10       | 3/10       | 11/30     | 36,67%      |
+| **Multitask-Prompting**   | 4/10       | 5/10       | 6/10       | 12/30     | 40,00%      |
+| **Instruction + One-Shot Prompting** | 8/10       | 9/10       | 6/10       | 23/30     | 76,67%      |
 
 ---
 
@@ -1544,7 +1545,7 @@ Bemerkungen:
 
 **Punkte: 3/10**
 
-## **Total: 14/30**
+## **Total: 12/30**
 
 ---
 
