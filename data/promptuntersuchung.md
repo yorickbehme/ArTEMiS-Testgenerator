@@ -6,7 +6,7 @@ Die Ausgaben wurden mit einer vordefinierten Liste von **Standard-Testfällen** 
 
 ---
 
-## **Auswertungstabellen**->Überarbeiten
+## **Auswertungstabellen**
 
 | **Technik**           | **Iteration 1** | **Iteration 2** | **Iteration 3** | **Total** | **Prozent** |
 |-----------------------|------------|------------|------------|-----------|-------------|

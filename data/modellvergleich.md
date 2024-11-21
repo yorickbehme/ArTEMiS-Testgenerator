@@ -6,7 +6,7 @@ Die generierten Ergebnisse werden mit einer vordefinierten Liste von **Standard-
 
 ---
 
-## **Auswertungstabellen**->Überarbeiten
+## **Auswertungstabellen**
 
 | **Modell**           | **Iteration 1** | **Iteration 2** | **Iteration 3** | **Total** | **Prozent** |
 |-----------------------|------------|------------|------------|-----------|-------------|
@@ -36,7 +36,7 @@ def calculate_mean(number_list: list):
     return average
 ```
 
---
+---
 
 ## **Mistral:7b**
 
