@@ -2,7 +2,7 @@
 
 In der folgenden Analyse werden die Modelle **Llama3** (lokal installiert mit Ollama) und **GPT-4o** hinsichtlich ihrer Leistungsfähigkeit bei der Testgenerierung untersucht. Jedes Modell wird mit fünf repräsentativen **Testfällen** getestet, wobei jeder Testfall in drei Durchläufen evaluiert wird. Als Eingabe dient der zuvor in der **Promptuntersuchung** entwickelte **Kombinationsprompt**, der mit den jeweiligen Testfällen ergänzt und den Modellen übergeben wird.
 
-Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in einer **Auswertungstabelle** zusammengefasst und gegenübergestellt. Diese befindet sich zur Übersicht am Anfang des Dokuments. 
+Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste von **Standard-Testfällen** abgeglichen, bewertet und in ein Punktesystem überführt. Abschließend werden die Ergebnisse in einer **Auswertungstabelle** zusammengefasst und gegenübergestellt. Diese befindet sich der Übersichtlichkeit halber am Anfang des Dokuments.
 
 ---
 
