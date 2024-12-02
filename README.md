@@ -4,7 +4,7 @@ Diese Python-Anwendung nutzt ein lokal mit Ollama betriebenes **Llama3-Modell**,
 
 Ziel ist es, **Kursentwicklerinnen und -entwickler** zu entlasten, die Erstellung neuer Kurse zu vereinfachen und die Qualität der Kurse durch automatisierte Testgenerierung zu steigern.
 
-Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und das Vorhandensein von **testbaren Strukturen** überprüft. Anschließend wird die Anfrage mittels eines speziell entwickelten **Kombinations-Prompts** (kombiniert One-Shot- und Instruktions-Techniken) an das lokale Llama3-Modell übergeben. Das Modell verarbeitet die Anfrage und liefert die generierte Antwort zurück.
+Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und das Vorhandensein von **testbaren Strukturen** überprüft. Anschließend wird die Anfrage mittels eines speziell entwickelten **Kombinations-Prompts** oder einem belibigen **Spezialisierungs Prompts** an das lokale Llama3-Modell übergeben. Das Modell verarbeitet die Anfrage und liefert einen generiertes Testscript zurück.
 
 ---
 
@@ -62,23 +62,31 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 
 ```plaintext
 ├── data/
+│   ├── artemis_integration.md
+│   ├── beispiel_optimierung.md
+│   ├── modelfileuntersuchung.md
+│   ├── modell_auswertung.md
+│   ├── modelluntersuchung.md
+│   ├── modellvergleich.md
+│   └── promptuntersuchung.md
 ├── src/
 │   ├── ai_generator.py  
 │   ├── main.py
-│   ├── ui_builder.py
+│   ├── prompts.json
+│   ├── prompts.py
 │   ├── ui_elements.py
+│   ├── ui_testgenerator.py
 │   └── validator.py
-├── tests/
-├── README.md
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
 
 ---
 
 ## **Hinweise**
-- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-35`.
+- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-41`.
 - **Einschränkungen:** Derzeit wird nur Python-Code und nur das Model Llama3 unterstützt.
-- **Feedback:** Für Fragen, Fehlerberichte oder Vorschläge kannst du ein [Issue](https://github.com/<dein-repository>) erstellen.
+- **Feedback:** Für Fragen, Fehlerberichte oder Vorschläge kannst du ein [Issue](https://github.com/yorickbehme/ArTEMiS-Testgenerator.git) erstellen.
 
 ## **Lizenz**
 Dieses Projekt steht unter der [MIT-Lizenz](./LICENSE). Details dazu findest du in der Datei `LICENSE`.
