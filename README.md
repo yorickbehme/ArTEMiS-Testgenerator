@@ -84,7 +84,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ---
 
 ## **Hinweise**
-- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-41`.
+- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-42`.
 - **Einschränkungen:** Derzeit wird nur Python-Code und nur das Model Llama3 unterstützt.
 - **Feedback:** Für Fragen, Fehlerberichte oder Vorschläge kannst du ein [Issue](https://github.com/yorickbehme/ArTEMiS-Testgenerator.git) erstellen.
 

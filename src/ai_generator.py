@@ -14,7 +14,7 @@ class TestGeneratorModel:
         """
         Startet die Generierung des Testcodes basierend auf der eingegebenen Musterlösung.
         """
-        output = None  # Variable für Fehlerausgabe
+        output = None  # Gemeinsame Variable für Fehler und Worker-Ausgabe
 
         with self.lock:
             if self.generation_is_running:
@@ -40,12 +40,17 @@ class TestGeneratorModel:
                     callback(output)
                 return
 
+            print("Testgenerierung wird gestartet...")
+            print(f"Prompt: {prompt}")
+            print(f"Code: {code}")
+            print(f"Modell: {model_name}")
+
             def worker():
                 """
                 Arbeiterfunktion, die den Testcode generiert und das Ergebnis
                 über den Callback zurückgibt.
                 """
-                nonlocal output  # Variable für Fehlerausgabe
+                nonlocal output  # Nutze die gemeinsame Variable
                 try:
                     # Erstellen des Prompts für das Modell
                     total_prompt = prompt + "\n" + code

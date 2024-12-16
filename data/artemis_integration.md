@@ -157,7 +157,98 @@ Das Einpflegen in ArTEMiS funktioniert in folgenden Schritten:
 2. float Testcase entfernen 
 3. Leichte Veränderungen an  den erwarteten Ausgaben machen ('.' entfernen und Ergebnis für test_negativ_input korregieren)
 
+```
+# bevavior_test.py
+import unittest
+from unittest.mock import patch
+from io import StringIO
+import importlib
+
+class TestRectanglePerimeterBehavior:
+    """
+    Testklasse für das Verhalten der Rechteckumfangsberechnung.
+    """
+
+    def test_positive_input(self):
+        """
+        Testet die Berechnung bei positiven Längen-Eingaben.
+        """
+        with patch('builtins.input', return_value='5'), patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            import assignment.rectangle_perimeter
+            importlib.reload(assignment.rectangle_perimeter)
+            output = mock_stdout.getvalue().strip()
+
+            # Überprüfe die Ausgabe
+            assert "Der Umfang des Rechtecks beträgt: 20" in output, (
+                "Das Programm sollte positive Input korrekt berechnen und ausgeben. "
+                "Hast du überprüft, ob die Berechnung korrekt implementiert ist?"
+            )
+
+    def test_negative_input(self):
+        """
+        Testet die Berechnung bei negativen Längen-Eingaben.
+        """
+        with patch('builtins.input', return_value='-3'), patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            import assignment.rectangle_perimeter
+            importlib.reload(assignment.rectangle_perimeter)
+            output = mock_stdout.getvalue().strip()
+
+            # Überprüfe die Ausgabe
+            assert "Der Umfang des Rechtecks beträgt: -12" in output, (
+                "Das Programm sollte negative Input korrekt berechnen und ausgeben. "
+                "Wird bei negativen Werten die Berechnung richtig angewendet und die Ausgabe korrekt formatiert?"
+            )
+
+    def test_large_input(self):
+        """
+        Testet die Berechnung bei sehr großen Längen-Eingaben.
+        """
+        with patch('builtins.input', return_value='1000000'), patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            import assignment.rectangle_perimeter
+            importlib.reload(assignment.rectangle_perimeter)
+            output = mock_stdout.getvalue().strip()
+
+            # Überprüfe die Ausgabe
+            assert "Der Umfang des Rechtecks beträgt: 4000000" in output, (
+                "Das Programm sollte mit großem Input korrekt umgehen. "
+                "Hast du darauf geachtet, dass der Code keine Fehler bei sehr großen Zahlen wirft?"
+            )
+```
+
+```
+# structural_test.py
+import unittest
+from unittest.mock import patch
+from io import StringIO
+import importlib
+
+
+class TestRectanglePerimeterStructure:
+    """
+    Testklasse für die Struktur der Rechteckumfangsberechnung.
+    """
+
+    def test_output_contains_correct_phrase(self):
+        """
+        Prüft, ob die Ausgabe die richtige Formulierung enthält.
+        """
+        with patch('builtins.input', return_value='25'), patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            import assignment.rectangle_perimeter
+            importlib.reload(assignment.rectangle_perimeter)
+            output = mock_stdout.getvalue().strip()
+
+            # Strukturprüfung der Ausgabe
+            assert "Der Umfang des Rechtecks beträgt: " in output, (
+                "Die Ausgabe sollte den Text 'Der Umfang des Rechtecks beträgt: ' enthalten. "
+                "Ist sichergestellt, dass die Ausgabe einheitlich formatiert ist?"
+            )
+```
+
 ---
+
+
+
+
 
 ## **Aufgabe 2:**
 
@@ -265,6 +356,67 @@ class TestListFunctionStructure(unittest.TestCase):
 Das Einpflegen in ArTEMiS funktioniert in folgenden Schritten: 
 1. TestKlassen in den jeweils passenden vordefinierten File kopieren (behavior_test.py bzw. structural_test.py)
 2. Import mit passendem File und Funktionsnamen anpassen
+
+```
+# bevavior_test.py
+import unittest
+from assignment.list_length import list_length
+
+class TestListFunctionBehavior(unittest.TestCase):
+
+    def test_list_length_for_empty_list(self):
+        """
+        Prüft, ob 'list_length' eine leere Liste korrekt auf 0 setzt.
+        """
+        self.assertEqual(
+            list_length([]), 0,
+            "'list_length' soll eine leere Liste auf 0 setzen. Überprüfe, ob die Funktion für einfache Listenkorrektheit funktioniert."
+        )
+
+    def test_list_length_for_single_element(self):
+        """
+        Prüft, ob 'list_length' eine Liste mit einem Element korrekt auf 1 setzt.
+        """
+        self.assertEqual(
+            list_length([1]), 1,
+            "'list_length' soll eine Liste mit einem Element auf 1 setzen. Vergewissere dich, dass die Funktion für Listen mit einem Element funktioniert."
+        )
+
+    def test_list_length_for_multiple_elements(self):
+        """
+        Prüft, ob 'list_length' eine Liste mit mehreren Elementen korrekt auf die Anzahl der Elemente setzt.
+        """
+        self.assertEqual(
+            list_length([1, 2, 3]), 3,
+            "'list_length' soll eine Liste mit mehreren Elementen auf die Anzahl der Elemente setzen. Überprüfe, ob die Funktion für Listen mit mehreren Elementen funktioniert."
+        )
+
+    def test_list_length_for_mixed_types(self):
+        """
+        Prüft, ob 'list_length' eine Liste mit verschiedenen Typen korrekt auf die Anzahl der Elemente setzt.
+        """
+        self.assertEqual(
+            list_length([1, "a", 2.5]), 3,
+            "'list_length' soll eine Liste mit verschiedenen Typen auf die Anzahl der Elemente setzen. Überprüfe, ob die Funktion für Listen mit verschiedenen Typen funktioniert."
+        )
+```
+
+```
+# structural_test.py
+import unittest
+from assignment.list_length import list_length
+
+class TestListFunctionStructure(unittest.TestCase):
+
+    def test_function_exists(self):
+        """
+        Prüft, ob die Funktion 'list_length' existiert.
+        """
+        self.assertTrue(
+            callable(list_length),
+            "'list_length' soll existieren. Vergewissere dich, dass die Funktion definiert ist. Hast du überprüft, ob die Funktion richtig geschrieben wurde?"
+        )
+```
 
 ---
 
@@ -499,5 +651,171 @@ Das Einpflegen in ArTEMiS funktioniert in folgenden Schritten:
 2. Import mit passendem File und Funktionsnamen anpassen
 3. TestPrintListIterativeBehavior::test_print_of_zero Erwartung von '' auf '0\n' ändern. 
 4. Doppel vergebene Namen eindeutig gemacht
+
+```
+# bevavior_test.py
+import unittest
+from unittest.mock import patch
+from io import StringIO
+from assignment.print_list import print_list_recursive
+from assignment.print_list import print_list_iterative
+
+class TestPrintListRecursiveBehavior(unittest.TestCase):
+    """
+    Testklasse für das Verhalten der Funktion 'print_list_recursive'.
+    """
+
+    def test_print_positive_numbers_rec(self):
+        """
+        Prüft die Ausgabe bei positiven Zahlen.
+        """
+        expected_output = "1\n2\n3\n4\n5\n" 
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print_list_recursive(0, [1, 2, 3, 4, 5])
+            self.assertEqual(
+                mock_stdout.getvalue(),
+                expected_output,
+                "'print_list_recursive' soll die Zahlen korrekt ausgeben. "
+                "Überprüfe, ob die Zahlen bei jedem Schritt korrekt berechnet und ausgegeben werden."
+            )
+
+    def test_print_zero_rec(self):
+        """
+        Prüft die Ausgabe bei der Eingabe 0.
+        """
+        expected_output = "" 
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print_list_recursive(5, [1, 2, 3, 4, 5])
+            self.assertEqual(
+                mock_stdout.getvalue(),
+                expected_output,
+                "'print_list_recursive' soll keine Ausgabe erzeugen, wenn die Eingabe 0 ist. "
+                "Falls du eine Ausgabe erzeugest, überprüfe, ob dies korrekt implementiert ist."
+            )
+
+class TestPrintListIterativeBehavior(unittest.TestCase):
+
+    def test_print_of_positive_numbers_it(self):
+        """
+        Prüft die Ausgabe bei positiven Zahlen.
+        """
+        expected_output = "1\n2\n3\n" 
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print_list_iterative([1, 2, 3])
+            self.assertEqual(
+                mock_stdout.getvalue(),
+                expected_output,
+                "'print_list_iterative' soll die Elemente korrekt ausgeben. "
+                "Hast du sichergestellt, dass alle Elemente korrekt ausgegeben werden?"
+            )
+
+    def test_print_of_zero_it(self):
+        """
+        Prüft die Ausgabe bei der Eingabe 0.
+        """
+        expected_output = "0\n" 
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print_list_iterative([0])
+            self.assertEqual(
+                mock_stdout.getvalue(),
+                expected_output,
+                "'print_list_iterative' soll keine Ausgabe machen, wenn 0 eingegeben wird. "
+                "Wird der Sonderfall für die Eingabe 0 korrekt behandelt?"
+            )
+
+    def test_print_of_negative_numbers_it(self):
+        """
+        Prüft die Ausgabe bei negativen Zahlen.
+        """
+        expected_output = "-1\n-2\n" 
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            print_list_iterative([-1, -2])
+            self.assertEqual(
+                mock_stdout.getvalue(),
+                expected_output,
+                "'print_list_iterative' soll die Elemente korrekt ausgeben. "
+                "Hast du sichergestellt, dass alle Elemente korrekt ausgegeben werden?"
+            )
+```
+
+```
+# structural_test.py
+import unittest
+from io import StringIO
+from unittest.mock import patch
+from assignment.print_list import print_list_iterative
+from assignment.print_list import print_list_recursive
+
+class TestPrintListRecursiveStructure(unittest.TestCase):
+    """
+    Testklasse für die strukturellen Aspekte der Funktion 'print_list_recursive'.
+    """
+
+    def test_function_exists_rec(self):
+        """
+        Prüft, ob die Funktion 'print_list_recursive' existiert.
+        """
+        self.assertTrue(
+            callable(print_list_recursive),
+            "'print_list_recursive' soll existieren. Vergewissere dich, dass die Funktion im Modul korrekt definiert ist."
+        )
+
+    def test_is_recursive(self):
+        """
+        Prüft, ob die Funktion 'print_list_recursive' rekursiv implementiert wurde.
+        """
+        import inspect
+        source_code = inspect.getsource(print_list_recursive)
+        occurrences = source_code.count("print_list_recursive(")
+
+        self.assertGreaterEqual(
+            occurrences,
+            2,
+            "'print_list_recursive' soll rekursiv implementiert sein. Der rekursive Aufruf wurde nicht gefunden. "
+            "Stelle sicher, dass die Funktion sich selbst korrekt aufruft."
+        )
+        self.assertNotIn(
+            "for",
+            source_code,
+            "'print_list_recursive' soll rekursiv implementiert sein. Schleifen (z. B. 'for') sind nicht erlaubt. "
+            "Falls du eine Schleife verwendest, ersetze sie durch einen rekursiven Aufruf."
+        )
+        self.assertNotIn(
+            "while",
+            source_code,
+            "'print_list_recursive' soll rekursiv implementiert sein. Schleifen (z. B. 'while') sind nicht erlaubt. "
+            "Falls du eine Schleife verwendest, überprüfe, wie sie durch Rekursion ersetzt werden kann."
+        )
+
+class TestPrintListIterativeStructure(unittest.TestCase):
+
+    def test_function_exists_it(self):
+        """
+        Prüft, ob die Funktion 'print_list_iterative' existiert.
+        """
+        self.assertTrue(
+            callable(print_list_iterative),
+            "'print_list_iterative' soll existieren. Vergewissere dich, dass die Funktion im Modul korrekt definiert ist."
+        )
+
+    def test_is_iterative(self):
+        """
+        Prüft, ob die Funktion 'print_list_iterative' iterativ implementiert wurde.
+        """
+        import inspect
+        source_code = inspect.getsource(print_list_iterative)
+        self.assertNotIn(
+            "return print_list_iterative",
+            source_code,
+            "'print_list_iterative' soll iterativ implementiert sein. Es wurden rekursive Aufrufe gefunden. "
+            "Hast du überprüft, ob eine Schleife zur Ausgabe verwendet wird?"
+        )
+        self.assertIn(
+            "for",
+            source_code,
+            "'print_list_iterative' soll iterativ implementiert sein. Eine Schleife (z. B. 'for') wird erwartet. "
+            "Überprüfe, ob der Code tatsächlich iterativ arbeitet."
+        )
+```
 
 ---
