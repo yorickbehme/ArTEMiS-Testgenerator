@@ -65,7 +65,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 │   ├── artemis_integration.md
 │   ├── beispiel_optimierung.md
 │   ├── modelfileuntersuchung.md
-│   ├── modell_auswertung.md
+│   ├── modellauswertung.md
 │   ├── modelluntersuchung.md
 │   ├── modellvergleich.md
 │   └── promptuntersuchung.md
