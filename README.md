@@ -26,10 +26,6 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ## **Installation**
 1. **Python installieren:**  
    Stelle sicher, dass Python 3.10 oder höher installiert ist. Du kannst Python [hier herunterladen](https://www.python.org/).  
-   Alternativ über `pip` aktualisieren:  
-   ```bash
-   pip install python3
-   ```
 2. **Ollama installieren:**  
    Installiere Ollama, um das Llama3-Modell lokal auszuführen:
    ```bash
@@ -38,7 +34,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 3. **Llama3-Modell laden:**  
    Lade das Modell lokal herunter:
    ```bash
-   ollama get llama3
+   ollama get llama3.1:8b
    ```
 4. **Repository klonen:**  
    Lade das Projekt herunter:
