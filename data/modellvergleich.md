@@ -6,7 +6,7 @@ Die generierten Ergebnisse werden mit einer vordefinierten Liste von **Standard-
 
 ---
 
-## **Auswertungstabellen**
+## **Auswertungstabelle**
 
 | **Modell**           | **Iteration 1** | **Iteration 2** | **Iteration 3** | **Total** | **Prozent** |
 |-----------------------|------------|------------|------------|-----------|-------------|
