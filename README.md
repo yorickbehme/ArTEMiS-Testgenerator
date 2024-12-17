@@ -34,7 +34,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 3. **Llama3-Modell laden:**  
    Lade das Modell lokal herunter:
    ```bash
-   ollama get llama3.1:8b
+   ollama pull llama3.1:8b
    ```
 4. **Repository klonen:**  
    Lade das Projekt herunter:
