@@ -44,7 +44,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 5. **Ins Code-Verzeichnis wechseln:**  
    Navigiere in das Hauptverzeichnis des Projekts:
    ```bash
-   cd ArTEMiS-Testgenerierung/src
+   cd ArTEMiS-Testgenerator/src
    ```
 5. **Programm starten:**  
    Führe die Anwendung aus:
