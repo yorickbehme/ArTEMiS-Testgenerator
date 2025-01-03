@@ -13,7 +13,7 @@ class SettingsFrame(tk.Frame):
         self.syntax_check_var = tk.BooleanVar(value=True)
         self.structure_check_var = tk.BooleanVar(value=True)
         self.selected_prompt_var = tk.StringVar(value="Einfache Funktionen")
-        self.selected_model_var = tk.StringVar(value="llama3")
+        self.selected_model_var = tk.StringVar(value="llama3.1:8b")
 
         # Stil setzen
         style = ttk.Style()
