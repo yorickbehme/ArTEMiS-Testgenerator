@@ -26,10 +26,6 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ## **Installation**
 1. **Python installieren:**  
    Stelle sicher, dass Python 3.10 oder höher installiert ist. Du kannst Python [hier herunterladen](https://www.python.org/).  
-   Alternativ über `pip` aktualisieren:  
-   ```bash
-   pip install python3
-   ```
 2. **Ollama installieren:**  
    Installiere Ollama, um das Llama3-Modell lokal auszuführen:
    ```bash
@@ -38,7 +34,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 3. **Llama3-Modell laden:**  
    Lade das Modell lokal herunter:
    ```bash
-   ollama get llama3
+   ollama pull llama3.1:8b
    ```
 4. **Repository klonen:**  
    Lade das Projekt herunter:
@@ -48,7 +44,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 5. **Ins Code-Verzeichnis wechseln:**  
    Navigiere in das Hauptverzeichnis des Projekts:
    ```bash
-   cd ArTEMiS-Testgenerierung/src
+   cd ArTEMiS-Testgenerator/src
    ```
 5. **Programm starten:**  
    Führe die Anwendung aus:
@@ -65,7 +61,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 │   ├── artemis_integration.md
 │   ├── beispiel_optimierung.md
 │   ├── modelfileuntersuchung.md
-│   ├── modell_auswertung.md
+│   ├── modellauswertung.md
 │   ├── modelluntersuchung.md
 │   ├── modellvergleich.md
 │   └── promptuntersuchung.md
@@ -84,7 +80,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ---
 
 ## **Hinweise**
-- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-42`.
+- **Version:** Diese Anwendung basiert auf Prototyp-Version `version-49`.
 - **Einschränkungen:** Derzeit wird nur Python-Code und nur das Model Llama3 unterstützt.
 - **Feedback:** Für Fragen, Fehlerberichte oder Vorschläge kannst du ein [Issue](https://github.com/yorickbehme/ArTEMiS-Testgenerator.git) erstellen.
 

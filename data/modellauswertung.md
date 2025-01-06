@@ -16,7 +16,7 @@ Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste v
 | 3             | 1/10      | 10/10    |
 | **Total:**    | **21/30 = 70%**  | **30/30 = 100%** |
 
-### Test 2: Multiplikation
+### Test 2: Multioperation
 | **Iteration** | **Llama3**        | **GPT-4o**       |
 |---------------|-------------------|------------------|
 | 1             | 13/30    | 24/30    |
@@ -24,7 +24,7 @@ Die Ergebnisse der Modelle werden anschließend mit einer vordefinierten Liste v
 | 3             | 21/30    | 24/30    |
 | **Total:**    | **63/90 = 70%**  | **66/90 = 73,33%** |
 
-### Test 3: Division
+### Test 3: Quadratwurzel
 | **Iteration** | **Llama3**        | **GPT-4o**       |
 |---------------|-------------------|------------------|
 | 1             | 0/9    | 9/9      |
