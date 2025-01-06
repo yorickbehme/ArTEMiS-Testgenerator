@@ -1,15 +1,15 @@
-# **ArTEMiS-Testgenerierung**
+# **ArTEMiS-Testskriptgenerierung**
 
-Diese Python-Anwendung nutzt ein lokal mit Ollama betriebenes **Llama3-Modell**, um automatisch Testscripte für vorgegebene Musterlösungen zu erstellen. Die generierten Tests sind speziell für den Einsatz in der **ArTEMiS-Lernumgebung** konzipiert.
+Diese Python-Anwendung nutzt ein lokal mit Ollama betriebenes **Llama3.1-Modell**, um automatisch Testskripte für vorgegebene Musterlösungen zu erstellen. Die generierten Tests sind speziell für den Einsatz in der **ArTEMiS-Lernumgebung** konzipiert.
 
-Ziel ist es, **Kursentwicklerinnen und -entwickler** zu entlasten, die Erstellung neuer Kurse zu vereinfachen und die Qualität der Kurse durch automatisierte Testgenerierung zu steigern.
+Ziel ist es, **Kursentwicklerinnen und -entwickler** zu entlasten, die Erstellung neuer Kurse zu vereinfachen und die Qualität der Kurse durch automatisierte Testskriptgenerierung zu steigern.
 
-Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und das Vorhandensein von **testbaren Strukturen** überprüft. Anschließend wird die Anfrage mittels eines speziell entwickelten **Kombinations-Prompts** oder einem belibigen **Spezialisierungs Prompts** an das lokale Llama3-Modell übergeben. Das Modell verarbeitet die Anfrage und liefert einen generiertes Testscript zurück.
+Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und das Vorhandensein von **testbaren Strukturen** überprüft. Anschließend wird die Anfrage mittels eines speziell entwickelten **Kombinations-Prompts** oder einem belibigen **Spezialisierungs-Prompt** an das lokale Llama3.1-Modell übergeben. Das Modell verarbeitet die Anfrage und liefert einen generiertes Testscript zurück.
 
 ---
 
 ## **Features**
-- **Automatisierte Testgenerierung**: Basierend auf einer Musterlösung werden Testskripte generiert.
+- **Automatisierte Testskriptgenerierung**: Basierend auf einer Musterlösung werden Testskripte generiert.
 - **ArTEMiS-Integration**: Speziell für den Einsatz in der ArTEMiS-Lernumgebung optimiert.
 - **Flexible Eingaben**: Unterstützt verschiedene Python-Programmieraufgaben.
 - **Lokale Ausführung**: Modell läuft lokal ohne Internetverbindung.
@@ -56,22 +56,24 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ## **Projektstruktur**
 
 ```plaintext
-├── data/
+├── appx/
 │   ├── artemis_integration.md
 │   ├── beispiel_optimierung.md
+│   ├── feedback_nutzerbefragung.md
 │   ├── modelfileuntersuchung.md
 │   ├── modellauswertung.md
 │   ├── modelluntersuchung.md
 │   ├── modellvergleich.md
+│   ├── poc_nutzerbefragung.md
 │   └── promptuntersuchung.md
 ├── src/
-│   ├── ai_generator.py  
+│   ├── generator_manager.py  
 │   ├── main.py
+│   ├── prompt_manager.py
 │   ├── prompts.json
-│   ├── prompts.py
-│   ├── ui_elements.py
-│   ├── ui_testgenerator.py
-│   └── validator.py
+│   ├── ui_main.py
+│   ├── ui_settings.py
+│   └── validator_manager.py
 ├── LICENSE
 └── README.md
 ```
@@ -80,7 +82,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 
 ## **Hinweise**
 - **Version:** Diese Anwendung basiert auf Prototyp-Version `version-49`.
-- **Einschränkungen:** Derzeit wird nur Python-Code und nur das Model Llama3 unterstützt.
+- **Einschränkungen:** Derzeit wird nur Python-Code und nur das Model Llama3.1:8b unterstützt.
 - **Feedback:** Für Fragen, Fehlerberichte oder Vorschläge kannst du ein [Issue](https://github.com/yorickbehme/ArTEMiS-Testgenerator.git) erstellen.
 
 ## **Lizenz**
