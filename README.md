@@ -18,14 +18,13 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ---
 
 ## **Voraussetzungen**
-- Python **3.10** oder höher
-- Ollama **0.3.14** oder höher
-
+- Python **3.10** oder höher (Du kannst Python [hier herunterladen](https://www.python.org/))
+- Installation und Nutzung über das Terminal 
 ---
 
 ## **Installation**
 1. **Python installieren:**  
-   Stelle sicher, dass Python 3.10 oder höher installiert ist. Du kannst Python [hier herunterladen](https://www.python.org/).  
+   Stelle sicher, dass Python 3.10 oder höher installiert ist.  
 2. **Ollama installieren:**  
    Installiere Ollama, um das Llama3-Modell lokal auszuführen:
    ```bash
