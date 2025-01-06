@@ -19,7 +19,7 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 
 ## **Voraussetzungen**
 - Python **3.10** oder höher
-- Ollama **0.3.14** oder höher mit installiertem Llama3-Modell
+- Ollama **0.3.14** oder höher
 
 ---
 
