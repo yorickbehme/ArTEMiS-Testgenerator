@@ -23,8 +23,8 @@ Vor jeder Anfrage wird die Eingabe optional auf **syntaktische Korrektheit** und
 ---
 
 ## **Installation**
-1. **Python installieren:**  
-   Stelle sicher, dass Python 3.10 oder höher installiert ist.  
+1. **Terminal öffnen:**  
+   Öffne dein Terminal und navigiere zu dem Ordner, in welchem du das Tool ablegen möchtest.
 2. **Ollama installieren:**  
    Installiere Ollama, um das Llama3-Modell lokal auszuführen:
    ```bash
