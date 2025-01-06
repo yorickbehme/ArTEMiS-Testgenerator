@@ -53,7 +53,7 @@ class UIMain(tk.Frame):
         )
         self.code_text.pack(fill=tk.BOTH, expand=True)
         self.code_text.insert(
-            tk.END, "Beispiel...\ndef example_function(x):\n    return x * 2"
+            tk.END, "Beispiel...\ndef add(a, b):\n    return a + b"
         )
 
         # --- Ausgabe-Bereich ---
