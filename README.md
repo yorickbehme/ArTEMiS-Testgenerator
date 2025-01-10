@@ -1,4 +1,4 @@
-# **ArTEMiS-Testskriptgenerierung**
+# **ArTEMiS-Testskriptgenerator**
 
 Diese Python-Anwendung nutzt ein lokal mit Ollama betriebenes **Llama3.1-Modell**, um automatisch Testskripte für vorgegebene Musterlösungen zu erstellen. Die generierten Tests sind speziell für den Einsatz in der **ArTEMiS-Lernumgebung** konzipiert.
 
